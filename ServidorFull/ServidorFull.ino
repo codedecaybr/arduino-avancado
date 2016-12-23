@@ -12,9 +12,13 @@ char ssid[] = "codedecay";                 // nome do access point
 char pass[] = "codedecay2017";         // senha do access point
 
 // use a ring buffer to increase speed and reduce memory allocation
-RingBuffer buf(8);
+RingBuffer buf(20);
+int estadoFan = 0;
 
 void setup() {
+    pinMode(13, OUTPUT);
+    digitalWrite(13, LOW);
+
     Serial.begin(9600);     // inicia a comunicacao serial para debug
     ESP8266.begin(9600);    // inicializa a comunicacao com o ESP8266
     WiFi.init(&ESP8266);    // initialize ESP module
@@ -38,6 +42,7 @@ void loop() {
     WiFiEspClient cliente = servidor.available(); // aguarda a conexao de clientes novos
 
     if (cliente) { // se aconteceu a conexao
+        bool recebeuGet = false;
         buf.init(); // initialize the circular buffer
         while ( cliente.connected() ) {
             if ( cliente.available() ) { // verifica se ainda existem bytes a serem recebidos do cliente
@@ -46,6 +51,13 @@ void loop() {
 
                 // um request http termina com dois \r\n consecutivos
                 // quando atingirmos essa situacao, basta enviar a resposta
+                if ( buf.endsWith("cmd=toggle") && !recebeuGet ) {
+                  recebeuGet = true;
+                  if ( estadoFan == 1 ) digitalWrite(13, LOW);
+                  else digitalWrite(13, HIGH);
+                  estadoFan = !estadoFan;
+                }
+
                 if ( buf.endsWith("\r\n\r\n") ) {
                     enviaResposta(cliente);
                     break;
@@ -72,5 +84,6 @@ void enviaResposta(WiFiEspClient cliente) {
     cliente.print("Temperatura: ");
     cliente.print(analogRead(0) * (500.0/1023.0) );
     cliente.print("<br>\r\n");
+    cliente.print("Liga/Desliga: <a href=\"/?cmd=toggle\"><button type=\"button\">ON/OFF</button><a>");
     cliente.print("</html>\r\n");
 }
