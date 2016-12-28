@@ -1,0 +1,41 @@
+:Project: Criando um servidor HTTP simples
+:Author: Douglas Navarro e Renan Yuri Lino
+:Email: contato@codedecay.com.br
+:Date: 28/12/2016
+:Revision: 0.1
+:License: Apache 2.0
+
+= Projeto: {Project}
+
+== Passo 1: Instalação
+
+== Passo 2: Montagem do circuito
+
+== Passo 3: Upload do código
+
+=== Estrutura de arquivos
+
+....
+ Ex6                    => Pasta do sketch Arduino
+  ├── Ex6.ino           => Arquivo principal do sketch
+  └── ReadMe.adoc       => Este arquivo
+....
+
+=== Licença
+Este projeto está publicado com a licença {License}.
+
+=== Contribuindo
+Para contribuir com este projeto, entre em contato com {Author} <{Email}>
+
+=== Lista de Materiais
+
+|===
+| ID | Nome do componente  | Quantidade
+| A1 | Arduino UNO         | 1
+|===
+
+
+=== Help
+This document is written in the _AsciiDoc_ format, a markup language to describe documents.
+If you need help you can search the http://www.methods.co.nz/asciidoc[AsciiDoc homepage]
+or consult the http://powerman.name/doc/asciidoc[AsciiDoc cheatsheet]

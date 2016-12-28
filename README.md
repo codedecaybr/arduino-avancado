@@ -8,7 +8,13 @@ Aqui você encontra os códigos desenvolvidos durante a aula, respostas para os 
 
 ## Exercícios
 
-* Ex1:
+* Ex1: Comandos AT
+* Ex2: Métodos HTTP
+* Ex3: Conectando o ESP8266 ao WiFi
+* Ex4: Enviando informações ao Thingspeak
+* Ex5: Criando um Access Point com o ESP8266
+* Ex6: Criando um servidor HTTP simples
+* Ex7: Recebendo e processando parâmetros no servidor
 
 ## Outros cursos
 

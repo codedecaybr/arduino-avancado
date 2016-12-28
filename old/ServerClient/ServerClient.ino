@@ -55,9 +55,9 @@ void setup() {
   Serial.print( "Tentando iniciar o Access Point de SSID: " );
   Serial.println( ssidAP );
   if ( WiFi.beginAP(ssidAP, 10, senhaAP, ENC_TYPE_WPA2_PSK, false) ) { // inicia o access point
-      Serial.print("Endereco IP: ");
-      Serial.println( WiFi.localIP() );
-      servidor.begin(); // inicia o servidor na porta 80
+    Serial.print("Endereco IP: ");
+    Serial.println( WiFi.localIP() );
+    servidor.begin(); // inicia o servidor na porta 80
   }
 }
 
@@ -112,38 +112,38 @@ void atenderCliente(WiFiEspClient cliente) {
   bool recebeuGet = false;
   buf.init(); // inicializa o buffer circular
   while ( cliente.connected() ) {
-      if ( cliente.available() ) { // verifica se ainda existem bytes a serem recebidos do cliente
-          buf.push( cliente.read() ); // adiciona o byte lido no buffer
+    if ( cliente.available() ) { // verifica se ainda existem bytes a serem recebidos do cliente
+      buf.push( cliente.read() ); // adiciona o byte lido no buffer
 
-          if ( buf.endsWith("cmd=toggle") && !recebeuGet ) {
-            recebeuGet = true;
-            digitalWrite(13, !estadoFan);
-            estadoFan = !estadoFan;
-          }
-
-          // um request http termina com dois \r\n consecutivos
-          // quando atingirmos essa situacao, basta enviar a resposta
-          if ( buf.endsWith("\r\n\r\n") ) {
-              enviarResposta(cliente);
-              break;
-          }
+      if ( buf.endsWith("cmd=toggle") && !recebeuGet ) {
+        recebeuGet = true;
+        digitalWrite(13, !estadoFan);
+        estadoFan = !estadoFan;
       }
+
+      // um request http termina com dois \r\n consecutivos
+      // quando atingirmos essa situacao, basta enviar a resposta
+      if ( buf.endsWith("\r\n\r\n") ) {
+        enviarResposta(cliente);
+        break;
+      }
+    }
   }
   cliente.stop();
 }
 
 void enviarResposta(WiFiEspClient cliente) {
-    cliente.print("HTTP/1.1 200 OK\r\n");
-    cliente.print("Content-Type: text/html\r\n");
-    cliente.print("Connection: close\r\n");
-    cliente.print("\r\n");
-    cliente.print("<!DOCTYPE HTML>\r\n");
-    cliente.print("<html>\r\n");
-    cliente.print("<h1>Smartfan</h1>\r\n");
-    cliente.print("<br>\r\n");
-    cliente.print("Temperatura: ");
-    cliente.print(analogRead(0) * (500.0/1023.0) );
-    cliente.print("<br>\r\n");
-    cliente.print("Liga/Desliga: <a href=\"/?cmd=toggle\"><button type=\"button\">ON/OFF</button><a>");
-    cliente.print("</html>\r\n");
+  cliente.print("HTTP/1.1 200 OK\r\n");
+  cliente.print("Content-Type: text/html\r\n");
+  cliente.print("Connection: close\r\n");
+  cliente.print("\r\n");
+  cliente.print("<!DOCTYPE HTML>\r\n");
+  cliente.print("<html>\r\n");
+  cliente.print("<h1>Smartfan</h1>\r\n");
+  cliente.print("<br>\r\n");
+  cliente.print("Temperatura: ");
+  cliente.print(analogRead(0) * (500.0/1023.0) );
+  cliente.print("<br>\r\n");
+  cliente.print("Liga/Desliga: <a href=\"/?cmd=toggle\"><button type=\"button\">ON/OFF</button><a>");
+  cliente.print("</html>\r\n");
 }
