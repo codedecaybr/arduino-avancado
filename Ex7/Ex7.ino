@@ -18,14 +18,14 @@ do Arduino serão RX e TX desta interface. A comunicação serial padrão do
 Arduino com o computador é realizada sempre com os pinos 0 e 1. */
 SoftwareSerial ESP8266(10, 11); // RX do Arduino, TX do Arduino
 
-char ssidStation[] = "Claudia";            // nome da rede wifi a ser utilizada
-char senhaStation[] = "140897hr";        // senha da rede wifi a ser utilizada
+char ssidStation[] = "gauss";            // nome da rede wifi a ser utilizada
+char senhaStation[] = "coxinha10";        // senha da rede wifi a ser utilizada
 
 char ssidAP[] = "codedecay";                 // nome do access point
 char senhaAP[] = "codedecay2017";         // senha do access point
 
 char enderecoThingspeak[] = "api.thingspeak.com"; // endereço do Thingspeak
-String keyThingspeak = "36H51R1D0CWQ14W0"; // a chave do seu canal
+String keyThingspeak = "UPOKX9UTPMXI6916"; // a chave do seu canal
 
 /*Armazena o instante em que a placa enviou a requisição mais recente para
 o servidor do Thingspeak*/
@@ -44,8 +44,8 @@ RingBuffer buf(20);
 int estadoFan = LOW;
 
 void setup() {
-  pinMode(13, OUTPUT); // Inicia o pino de controle do relé como saída
-  digitalWrite(13, estadoFan);
+  pinMode(12, OUTPUT); // Inicia o pino de controle do relé como saída
+  digitalWrite(12, estadoFan);
 
   Serial.begin(9600);  // Inicializa comunic. serial Arduino <-> computador
   ESP8266.begin(9600); // Inicializa comunic. serial Arduino <-> ESP
@@ -133,7 +133,7 @@ void atenderCliente(WiFiEspClient cliente) {
       /* verifica se a requisição recebida contém um parâmetro cmd=toggle: */
       if ( buf.endsWith("cmd=toggle") && !recebeuGet ) {
         recebeuGet = true; // indicador de passagem
-        digitalWrite(13, !estadoFan); // altera o estado do fan
+        digitalWrite(12, !estadoFan); // altera o estado do fan
         estadoFan = !estadoFan;
       }
 
