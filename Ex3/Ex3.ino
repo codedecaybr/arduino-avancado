@@ -1,7 +1,6 @@
 /*
 www.CodeDecay.com.br
 Licença de uso: Apache 2.0
-
 Neste exercício vamos conectar o ESP8266 a uma rede WiFi existente.
 */
 

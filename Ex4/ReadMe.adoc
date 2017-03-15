@@ -1,17 +1,25 @@
-:Project: Enviando informações ao Thingspeak
+:Project: Conectado o ESP8266 ao WiFi
 :Author: Douglas Navarro e Renan Yuri Lino
 :Email: contato@codedecay.com.br
-:Date: 28/12/2016
+:Date: 15/01/2017
 :Revision: 0.1
 :License: Apache 2.0
 
 = Projeto: {Project}
 
-== Passo 1: Instalação
+== Passo 1: Configuração do ThingSpeak
 
-== Passo 2: Montagem do circuito
+1. Crie uma conta no ThingSpeak
+2. Criar um canal no ThingSpeak
+3. Obter a chave de escrita do canal
 
-== Passo 3: Upload do código
+== Passo 2: Teste do ThingSpeak
+
+1. Acesse a seguinte página de seu navegador: www.thingspeak.com/update?key=<SUA CHAVE>&field1=<VALOR>
+
+== Passo 3: Montagem do sensor de temperatura
+
+1. Conecte o sensor de temperatura LM35Z no pino A0 do Arduino
 
 === Estrutura de arquivos
 
@@ -32,7 +40,13 @@ Para contribuir com este projeto, entre em contato com {Author} <{Email}>
 |===
 | ID | Nome do componente  | Quantidade
 | A1 | Arduino UNO         | 1
+| E1 | ESP8266             | 1
+| J1 | Jumper MxF          | ~6
+| R1 | Resistor 1k         | 3
+| P1 | Fonte de protoboard | 1
+| S1 | Sensor LM35         | 1
 |===
+
 
 
 === Help

@@ -131,7 +131,7 @@ void atenderCliente(WiFiEspClient cliente) {
       buf.push( cliente.read() ); // adiciona o byte lido no buffer
 
       /* verifica se a requisição recebida contém um parâmetro cmd=toggle: */
-      if ( buf.endsWith("cmd=toggle") && !recebeuGet ) {
+      if ( buf.endsWith("GET /?cmd=toggle") && !recebeuGet ) {
         recebeuGet = true; // indicador de passagem
         digitalWrite(12, !estadoFan); // altera o estado do fan
         estadoFan = !estadoFan;

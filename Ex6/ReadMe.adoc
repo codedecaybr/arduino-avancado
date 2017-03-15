@@ -7,12 +7,6 @@
 
 = Projeto: {Project}
 
-== Passo 1: Instalação
-
-== Passo 2: Montagem do circuito
-
-== Passo 3: Upload do código
-
 === Estrutura de arquivos
 
 ....
@@ -32,6 +26,10 @@ Para contribuir com este projeto, entre em contato com {Author} <{Email}>
 |===
 | ID | Nome do componente  | Quantidade
 | A1 | Arduino UNO         | 1
+| E1 | ESP8266             | 1
+| J1 | Jumper MxF          | ~6
+| R1 | Resistor 1k         | 3
+| P1 | Fonte de protoboard | 1
 |===
 
 

@@ -1,17 +1,38 @@
 :Project: Comandos AT
 :Author: Douglas Navarro e Renan Yuri Lino
 :Email: contato@codedecay.com.br
-:Date: 28/12/2016
+:Date: 15/01/2017
 :Revision: 0.1
 :License: Apache 2.0
 
 = Projeto: {Project}
 
-== Passo 1: Instalação
+== Passo 1: Upload do código
+
+1. Abra o exemplo Bare Minimum da Arduino IDE
+2. Faça o upload do código para a sua placa
 
 == Passo 2: Montagem do circuito
 
-== Passo 3: Upload do código
+1. Conecte a fonte de protoboard
+2. Conecte o GND da fonte com o GND do Arduino
+3. Alimente o Arduino utilizando o 3V3 da fonte
+4. Conecte o pino TX do Arduino com o TX do ESP8266
+5. Conecte o pino RX do Arduino com o RX do ESP8266
+
+== Passo 3: Comandos AT
+
+1. Abra o Monitor Serial
+2. Configure o baud rate para 115200
+3. Configure o final de linha para "Both NL & CR"
+4. Enviar o comando AT
+5. Enviar o comando AT+UART_DEF=9600,8,1,0,0
+6. Alterar o baud rate para 9600
+7. Selecionar o modo STATION com o comando AT+CWMODE=1
+8. Testar o comando AT+CWLAP
+9. Testar o comando AT+CWJAP="ssid","senha"
+10. Testar o comando AT+CIFSR
+
 
 === Estrutura de arquivos
 
@@ -32,6 +53,10 @@ Para contribuir com este projeto, entre em contato com {Author} <{Email}>
 |===
 | ID | Nome do componente  | Quantidade
 | A1 | Arduino UNO         | 1
+| E1 | ESP8266             | 1
+| J1 | Jumper MxF          | ~6
+| R1 | Resistor 1k         | 3
+| P1 | Fonte de protoboard | 1
 |===
 
 
