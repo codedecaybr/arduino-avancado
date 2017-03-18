@@ -13,10 +13,10 @@
 3. Verificar o IP com AT+CIFSR
 
 == Passo 2: Sessão HTTP
-1. Iniciar comunicação com o servidor com AT+CIPSTART="TCP","arduino.cc",80
-2. Iniciar o envio do cabeçalho: AT+CIPSEND=49
-3. Enviar a linha: GET /asciilogo.txt HTTP/1.1
-4. Enviar a linha: Host: arduino.cc
+1. Iniciar comunicação com o servidor com `AT+CIPSTART="TCP","arduino.cc",80`
+2. Iniciar o envio do cabeçalho: `AT+CIPSEND=49`
+3. Enviar a linha: `GET /asciilogo.txt HTTP/1.1`
+4. Enviar a linha: `Host: arduino.cc`
 5. Enviar uma linha em branco (pressionar Enter ou o botão Send)
 
 === Estrutura de arquivos
