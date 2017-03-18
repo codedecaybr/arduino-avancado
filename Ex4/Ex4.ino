@@ -49,7 +49,7 @@ void setup() {
 }
 
 void loop() {
-  // verifica se o último envio foi feito há mais de 60000 segundos:
+  // verifica se o último envio foi feito há mais de 60000 milisegundos:
   if ( millis() > ultimoEnvio + 60000 )  {
     enviarTemperatura(); // envia a temperatura para o Thingspeak
     ultimoEnvio = millis(); // atualiza o momento em que a ultima requisição foi enviada.
