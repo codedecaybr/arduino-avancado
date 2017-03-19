@@ -1,6 +1,5 @@
 # Code Decay
-GET /asciilogo.txt HTTP/1.1\\
-Host: arduino.cc\\\\
+
 ## Curso Arduino Avançado
 
 Este é o repositório do [Curso Arduino Avançado](http://www.codedecay.com.br/cursos/Curso-Arduino-Avancado) da [Code Decay](http://www.codedecay.com.br).

@@ -124,17 +124,20 @@ void enviarTemperatura() {
 }
 
 void atenderCliente(WiFiEspClient cliente) {
-  bool recebeuGet = false; // indicador de passagem
   buf.init(); // inicializa o buffer circular
   while ( cliente.connected() ) {
     if ( cliente.available() ) { // verifica se ainda existem bytes a serem recebidos do cliente
       buf.push( cliente.read() ); // adiciona o byte lido no buffer
 
       /* verifica se a requisição recebida contém um parâmetro cmd=toggle: */
-      if ( buf.endsWith("GET /?cmd=toggle") && !recebeuGet ) {
-        recebeuGet = true; // indicador de passagem
-        digitalWrite(12, !estadoFan); // altera o estado do fan
-        estadoFan = !estadoFan;
+      if ( buf.endsWith("GET /?cmd=toggle") ) {
+        if (estadoFan == HIGH){
+          digitalWrite(12, LOW);
+          estadoFan = LOW;
+        } else {
+          digitalWrite(12, HIGH);
+          estadoFan = HIGH;
+        }
       }
 
       /* um request http termina com dois \r\n consecutivos
