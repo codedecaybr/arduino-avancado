@@ -11,10 +11,10 @@ Aqui você encontra os códigos desenvolvidos durante a aula, respostas para os 
 * Ex1: Comandos AT [(Download da lista de comandos)](http://www.pridopia.co.uk/pi-doc/ESP8266ATCommandsSet.pdf)
 * Ex2: Métodos HTTP
 * Ex3: Conectando o ESP8266 ao WiFi
-* Ex4: Enviando informações ao Thingspeak
 * Ex5: Criando um Access Point com o ESP8266
 * Ex6: Criando um servidor HTTP simples
 * Ex7: Recebendo e processando parâmetros no servidor
+* Ex8: Adicionando leitura de temperatura
 
 ## Outros cursos
 
