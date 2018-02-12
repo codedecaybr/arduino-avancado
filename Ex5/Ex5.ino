@@ -23,13 +23,6 @@ char senhaStation[] = "140897hr";        // senha da rede wifi a ser utilizada
 char ssidAP[] = "codedecay";                 // nome do access point
 char senhaAP[] = "codedecay2017";         // senha do access point
 
-char enderecoThingspeak[] = "api.thingspeak.com"; // endereço do Thingspeak
-String keyThingspeak = "36H51R1D0CWQ14W0"; // a chave do seu canal
-
-/*Armazena o instante em que a placa enviou a requisição mais recente para
-o servidor do Thingspeak*/
-unsigned long ultimoEnvio = millis();
-
 /*Inicializa o objeto do tipo cliente, que usaremos para enviar as informações
 para o servidor do Thingspeak*/
 WiFiEspClient espCliente;
@@ -61,10 +54,7 @@ void setup() {
 
 void loop() {
   // verifica se o último envio foi feito há mais de 60000 segundos:
-  if ( millis() > ultimoEnvio + 60000 )  {
-    enviarTemperatura(); // envia a temperatura para o Thingspeak
-    ultimoEnvio = millis(); // atualiza o momento em que a ultima requisição foi enviada.
-  }
+  delay(1000);
 }
 
 void printWifiStatus() {
@@ -82,26 +72,5 @@ void printWifiStatus() {
   Serial.print(WiFi.RSSI());
   Serial.println(" dBm");
 
-  Serial.println();
-}
-
-void enviarTemperatura() {
-  // realiza a leitura analógica e a conversão para graus Celsius:
-  int leitura = analogRead(0)*500.0/1023.0;
-  // converte o resultado da conta anterior para texto:
-  String temperatura = String(leitura);
-
-  // Se conseguir conectar ao servidor, faz a requisição:
-  if ( espCliente.connect(enderecoThingspeak, 80) ) {
-    Serial.println("Conectado ao servidor!");
-    // Vamos montar a primeira linha do cabeçalho, a única que precisa ser alterada:
-    String cabecalho = "GET /update?key=" + keyThingspeak + "&field1=" + temperatura + " HTTP/1.1";
-    espCliente.println(cabecalho);
-    // Vamos montar as outras linhas do cabeçalho, que são estáticas:
-    espCliente.println("Host: api.thingspeak.com");
-    espCliente.println("Connection: close");
-    espCliente.println();
-  }
-  espCliente.stop(); // Encerra a conexão com o servidor
   Serial.println();
 }
