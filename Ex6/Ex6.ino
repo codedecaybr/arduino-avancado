@@ -111,8 +111,5 @@ void enviarResposta(WiFiEspClient cliente) {
   cliente.print("<!DOCTYPE HTML>\r\n");
   cliente.print("<html>\r\n");
   cliente.print("<h1>Smartfan</h1>\r\n");
-  cliente.print("<br>\r\n");
-  cliente.print("Temperatura: ");
-  cliente.print(analogRead(0) * (500.0/1023.0) );
   cliente.print("</html>\r\n");
 }
