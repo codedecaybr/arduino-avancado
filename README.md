@@ -1,8 +1,8 @@
 # Code Decay
 
-## Curso Arduino Avançado
+## Curso Arduino Para Internet das Coisas
 
-Este é o repositório do [Curso Arduino Avançado](http://www.codedecay.com.br/cursos/Curso-Arduino-Avancado) da [Code Decay](http://www.codedecay.com.br).
+Este é o repositório do [Curso Arduino Para Internet das Coisas](http://www.codedecay.com.br/cursos/Curso-Arduino-Avancado) da [Code Decay](http://www.codedecay.com.br).
 
 Aqui você encontra os códigos desenvolvidos durante a aula, respostas para os desafios e outros recursos utilizados no curso.
 
