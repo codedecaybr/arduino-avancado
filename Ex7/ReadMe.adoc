@@ -1,4 +1,4 @@
-:Project: Recebendo e processando parâmetros no servidor
+:Project: Enviando leituras de temperatura ao ThingSpeak
 :Author: Douglas Navarro e Renan Yuri Lino
 :Email: contato@codedecay.com.br
 :Date: 28/12/2016
