@@ -1,7 +1,7 @@
 :Project: Enviando leituras de temperatura ao ThingSpeak
 :Author: Douglas Navarro e Renan Yuri Lino
 :Email: contato@codedecay.com.br
-:Date: 28/12/2016
+:Date: 24/02/2018
 :Revision: 0.1
 :License: Apache 2.0
 
