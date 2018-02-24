@@ -1,8 +1,8 @@
-:Project: Criando um servidor HTTP simples
+:Project: Processando parâmetros no servidor
 :Author: Douglas Navarro e Renan Yuri Lino
 :Email: contato@codedecay.com.br
-:Date: 28/12/2016
-:Revision: 0.1
+:Date: 24/02/2018
+:Revision: 0.2
 :License: Apache 2.0
 
 = Projeto: {Project}

@@ -44,6 +44,13 @@ void setup() {
   Serial.println(" dBm");
 
   Serial.println();
+
+  // Incia o AP (nome, canal, senha, segurança, desligar station)
+  WiFi.beginAP("WiFi-Douglas", 2, "12345678", ENC_TYPE_WPA_PSK, false);
+
+  // Mostra o endereço IP do AP, que usamos para conectar localmente ao servidor
+  Serial.print("Endereco IP do AP: ");
+  Serial.println(WiFi.localIP());
   
 }
 

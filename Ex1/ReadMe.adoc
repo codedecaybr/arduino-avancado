@@ -1,8 +1,8 @@
 :Project: Comandos AT
 :Author: Douglas Navarro e Renan Yuri Lino
 :Email: contato@codedecay.com.br
-:Date: 15/01/2017
-:Revision: 0.1
+:Date: 24/02/2018
+:Revision: 0.2
 :License: Apache 2.0
 
 = Projeto: {Project}

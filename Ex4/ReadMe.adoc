@@ -1,4 +1,4 @@
-:Project: Conectando o ESP8266 ao WiFi
+:Project: Criando um Access Point com o ESP8266
 :Author: Douglas Navarro e Renan Yuri Lino
 :Email: contato@codedecay.com.br
 :Date: 24/02/2018
@@ -10,8 +10,8 @@
 === Estrutura de arquivos
 
 ....
- Ex3                    => Pasta do sketch Arduino
-  ├── Ex3.ino           => Arquivo principal do sketch
+ Ex4                    => Pasta do sketch Arduino
+  ├── Ex4.ino           => Arquivo principal do sketch
   └── ReadMe.adoc       => Este arquivo
 ....
 
@@ -31,7 +31,6 @@ Para contribuir com este projeto, entre em contato com {Author} <{Email}>
 | R1 | Resistor 1k         | 3
 | P1 | Fonte de protoboard | 1
 |===
-
 
 
 === Help
