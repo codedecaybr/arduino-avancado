@@ -17,8 +17,7 @@ do Arduino serão RX e TX desta interface. A comunicação serial padrão do
 Arduino com o computador é realizada sempre com os pinos 0 e 1. */
 SoftwareSerial ESP8266(10, 11);
 
-/*Inicializa o objeto do tipo cliente, que usaremos para enviar as informações
-para o servidor do Thingspeak*/
+// O RingBuffer armazena a requisição recebida pelo servidor
 RingBuffer buf(20);
 
 // Inicializar servidor no ESP que receberá conexões na porta 80 (HTTP)
