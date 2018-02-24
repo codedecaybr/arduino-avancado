@@ -31,6 +31,7 @@ Para contribuir com este projeto, entre em contato com {Author} <{Email}>
 | R1 | Resistor 1k         | 3
 | P1 | Fonte de protoboard | 1
 | K1 | Módulo Relé         | 1
+| S1 | Sensor LM35         | 1
 |===
 
 
